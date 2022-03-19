@@ -1,0 +1,27 @@
+In ONE Java file, only allow to have ONE public class. We can not write 2 public class in one Java file as follow:
+public class A2 {
+    public A2() {
+        System.out.println("Hi!");
+    }
+}
+
+
+public class B2 extends A2 {
+    public B2() {
+        System.out.println("Bye!");
+    }
+}
+
+If we want to write class B2 in the same file with class A2, have to set default access modifier for class B2:
+public class A2 {
+    public A2() {
+        System.out.println("Hi!");
+    }
+}
+
+
+class B2 extends A2 {
+    public B2() {
+        System.out.println("Bye!");
+    }
+}
