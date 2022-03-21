@@ -1,0 +1,52 @@
+This code will have compiler error:
+package Inheritance;
+
+public class A {
+	public int x = 10;
+}
+
+class B extends A {
+	public int x = 20;
+	public void display() {
+		System.out.println(this.x);
+	}
+}
+
+package Inheritance;
+
+public class Quiz {
+	public static void main(String[] args) {
+		A b = new B();
+		b.display(); 
+	}
+}
+
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	The method display() is undefined for the type A
+
+	at Encapsulation/Inheritance.Quiz.main(Quiz.java:6)
+-------------------------------------------------------------------------------------------------------------
+BUT this code will not have compiler error:
+
+package Inheritance;
+
+public class SuperClass {
+	int x = 10;
+	
+}
+
+class SubClass extends SuperClass {
+	int x = 20;
+	
+}
+
+package Inheritance;
+
+public class Entry {
+	public static void main(String[] args) {
+		SuperClass a = new SubClass();
+		System.out.println(a.x);
+		System.out.println(((SubClass)a).x);
+	}
+}
+
