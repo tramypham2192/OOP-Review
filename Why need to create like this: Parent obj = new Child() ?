@@ -1,0 +1,24 @@
+Because with the same method in parent class and child classes, it help when create an array of child classes. For example:
+
+class Animal {
+  String getName();
+  int getAge();
+ }
+ 
+ class Dog extends Animal {
+  String getName(){
+    return "Dog";
+ }
+ 
+ class Cat extends Animal {
+  String getName(){
+    return "Cat";
+ }
+ 
+ List<Animal> animals = new ArrayList<Animal>();
+ animals.add(new Dog());
+ animals.add(new Cat());
+ 
+ for (Animal animal: animals){
+  System.out.println(animal.getName());
+ }
